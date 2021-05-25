@@ -3,7 +3,7 @@ import Cell from './Cell'
 import './Board.css'
 
 export default function Board(props) {
-    const {nrows,ncols} = props
+    const {nrows,ncols,level} = props
     let [mat,setMat] = useState( Array.from({length : nrows}, () => Array.from({length : ncols}, () => false) ) )
 
     function flipCell(x,y){
@@ -23,10 +23,15 @@ export default function Board(props) {
     }
 
     function createBoard(){
-        let n = Math.random() * 
-        toggleCells(1,2)
-        toggleCells(3,4)
-        toggleCells(3,3)
+        let moves = Array.from({length : level}, () => (
+            [Math.floor(Math.random()*nrows) , Math.floor(Math.random()*ncols)]
+        ))
+
+        console.log(moves)
+
+        moves.forEach(ele => {
+            toggleCells(ele[0], ele[1])
+        })
     }
 
     useEffect(()=>{

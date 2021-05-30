@@ -6,6 +6,14 @@ export default function Board(props) {
     const {nrows,ncols,level} = props
     let [mat,setMat] = useState( Array.from({length : nrows}, () => Array.from({length : ncols}, () => false) ) )
 
+    const checkWon = () => (
+        mat.every(x => (
+            x.every(y => (
+                y === false
+            ))
+        ))
+    )
+
     function flipCell(x,y){
         if(x >= 0 && x < nrows && y >= 0 && y < ncols){
             let cpy = [...mat]
@@ -20,9 +28,14 @@ export default function Board(props) {
         flipCell(x+1,y)
         flipCell(x,y-1)
         flipCell(x,y+1)
+
+        if( checkWon() ){
+            alert('You Won!')
+            fillBoard()
+        }
     }
 
-    function createBoard(){
+    function fillBoard(){
         let moves = Array.from({length : level}, () => (
             [Math.floor(Math.random()*nrows) , Math.floor(Math.random()*ncols)]
         ))
@@ -35,18 +48,19 @@ export default function Board(props) {
     }
 
     useEffect(()=>{
-        createBoard()
+        fillBoard()
     },[])
 
     return (
         <div className={['board']}>
             {mat.map((x,i) => (
-                <tr>
+                <tr key={i}>
                     {x.map( (y,j) => (
                         <Cell
                         isLit={y}
                         x={i}
                         y={j}
+                        key={`${i}${j}`}
                         toggleCells={toggleCells}
                         />
                     ))}

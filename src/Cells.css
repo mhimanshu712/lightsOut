@@ -1,10 +1,11 @@
 .Cell {
-  width: 100px;
-  height: 100px;
-  background: pink;
+  width: 75px;
+  height: 75px;
+  background: #263238;
   border: solid 1px black;
+  transition: background-color 0.7s ease;
 }
 
 .Cell-lit {
-  background: mediumseagreen;
+  background: #00bcd4;
 }

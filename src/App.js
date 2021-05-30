@@ -7,10 +7,13 @@ function App(props) {
 
   let [hasWon,setHasWon] = useState(false)
 
-  let wonEle = 
-    <div className='title-won'>
-      <div className='neon'>You</div>
-      <div className='flux'>Won</div>
+  let wonEle =
+    <div className='won-container'>
+      <div className='title-won'>
+        <div className='neon'>You</div>
+        <div className='flux'>Won</div>
+      </div>
+      <div className='replay-button' onClick={() => setHasWon(false)}></div>
     </div>;
 
   let boardEle = 

@@ -52,7 +52,7 @@ export default function Board(props) {
     },[])
 
     return (
-        <div className={['board']}>
+        <table className={['board']}>
             {mat.map((x,i) => (
                 <tr key={i}>
                     {x.map( (y,j) => (
@@ -66,6 +66,6 @@ export default function Board(props) {
                     ))}
                 </tr>
             ))}
-        </div>
+        </table>
     )
 }

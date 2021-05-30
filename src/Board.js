@@ -53,19 +53,21 @@ export default function Board(props) {
 
     return (
         <table className={['board']}>
-            {mat.map((x,i) => (
-                <tr key={i}>
-                    {x.map( (y,j) => (
-                        <Cell
-                        isLit={y}
-                        x={i}
-                        y={j}
-                        key={`${i}${j}`}
-                        toggleCells={toggleCells}
-                        />
-                    ))}
-                </tr>
-            ))}
+            <tbody>
+                {mat.map((x,i) => (
+                    <tr key={i}>
+                        {x.map( (y,j) => (
+                            <Cell
+                            isLit={y}
+                            x={i}
+                            y={j}
+                            key={`${i}${j}`}
+                            toggleCells={toggleCells}
+                            />
+                        ))}
+                    </tr>
+                ))}
+            </tbody>
         </table>
     )
 }

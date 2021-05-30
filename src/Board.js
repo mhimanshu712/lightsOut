@@ -30,8 +30,7 @@ export default function Board(props) {
         flipCell(x,y+1)
 
         if( checkWon() ){
-            alert('You Won!')
-            fillBoard()
+            props.setHasWon(true)
         }
     }
 

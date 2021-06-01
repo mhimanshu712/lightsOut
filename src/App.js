@@ -12,6 +12,11 @@ function App(props) {
 
   let finalLevel = Math.floor(Math.random()*2) + gameStates.level
 
+  const changeStates = ({level,size}) => {
+    setGameStates({level,size})
+    setToggleSettings(!toggleSettings)
+  }
+
   let wonEle =
     <div className='won-container'>
       <div className='title-won'>
@@ -39,7 +44,9 @@ function App(props) {
 
     let settingsEle = 
       <>
-        <SettingsDialog/>
+        <SettingsDialog
+        changeStates={changeStates}
+        />
       </>;
 
 

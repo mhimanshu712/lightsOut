@@ -28,16 +28,17 @@ body {
 .replay-button {
   background: url(replay.png);
   background-size: cover;
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   opacity: 0.5;
   margin-top: 100px;
-  transition: hover 0.4s ease-in;
+  transform-origin: center;
+  transform: scale(0.9);
+  transition: hover 0.5s ease-in-out;
 }
 
 .replay-button:hover {
-  height: 60px;
-  width: 60px;
+  transform: scale(1);
   opacity: 1;
 }
 

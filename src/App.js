@@ -5,10 +5,12 @@ import settingsIco from './settings.png'
 import SettingsDialog from './SettingsDialog'
 
 function App(props) {
-  let level = Math.floor(Math.random()*3)+2
-
+  
+  let [gameStates,setGameStates] = useState({level:2,size:5})
   let [hasWon,setHasWon] = useState(false)
   let [toggleSettings,setToggleSettings] = useState(false)
+
+  let finalLevel = Math.floor(Math.random()*2) + gameStates.level
 
   let wonEle =
     <div className='won-container'>
@@ -27,9 +29,9 @@ function App(props) {
         <div className='setting-button' onClick={() => setToggleSettings(true)}></div>
       </div>
         <Board
-        nrows={5}
-        ncols={5}
-        level={level}
+        nrows={gameStates.size}
+        ncols={gameStates.size}
+        level={finalLevel}
         key={1}
         setHasWon={setHasWon}
         />

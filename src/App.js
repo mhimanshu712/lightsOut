@@ -1,11 +1,14 @@
 import React, {useState} from 'react'
 import Board from './Board'
 import './App.css';
+import settingsIco from './settings.png'
+import SettingsDialog from './SettingsDialog'
 
 function App(props) {
   let level = Math.floor(Math.random()*3)+2
 
   let [hasWon,setHasWon] = useState(false)
+  let [toggleSettings,setToggleSettings] = useState(false)
 
   let wonEle =
     <div className='won-container'>
@@ -21,6 +24,7 @@ function App(props) {
       <div className='title'>
         <div className='neon'>Lights</div>
         <div className='flux'>Out</div>
+        <div className='setting-button' onClick={() => setToggleSettings(true)}></div>
       </div>
         <Board
         nrows={5}
@@ -31,9 +35,14 @@ function App(props) {
         />
     </>;
 
+    let settingsEle = 
+      <>
+        <SettingsDialog/>
+      </>;
+
 
   return (
-    hasWon? wonEle : boardEle
+    toggleSettings? settingsEle : (hasWon? wonEle : boardEle )
   )
 }
 

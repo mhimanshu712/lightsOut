@@ -23,7 +23,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 300px;
 }
 
 .replay-button {
@@ -42,6 +41,23 @@ body {
   opacity: 1;
 }
 
+.setting-button {
+  background: url(settings.png);
+  background-size: cover;
+  opacity: 0.5;
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
+  transform: scale(0.8);
+  transition: all 0.3s ease-in;
+}
+
+.setting-button:hover {
+  transform-origin: center;
+  transform: scale(1);
+  opacity: 0.9;
+}
+
 @font-face {
   font-family: neon;
   src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
@@ -56,14 +72,14 @@ body {
 .neon {
   font-family: neon;
   color: #fb4264;
-  font-size: 70px;
+  font-size: 65px;
   text-shadow: 0 0 3vw #f40a35;
 }
 
 .flux {
   font-family: neon;
   color: #426dfb;
-  font-size: 70px;
+  font-size: 65px;
   text-shadow: 0 0 3vw #2356ff;
 }
 

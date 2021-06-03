@@ -3,16 +3,8 @@ import './SettingsDialog.css'
 import SettingCell from './SettingCell'
 
 export default function SettingsDialog(props) {
-    let [level,setLevel] = useState([
-        {label:'Easy',active:false,val:2},
-        {label:'Medium',active:true,val:3},
-        {label:'Hard',active:false,val:5}
-    ])
-    let [size,setSize] = useState([
-        {label:'Small',active:false,val:3},
-        {label:'Mid',active:true,val:5},
-        {label:'Large',active:false,val:7}
-    ])
+    let [level,setLevel] = useState(props.level)
+    let [size,setSize] = useState(props.size)
 
     const changeLevel = (a) => {
         let cpy = level
@@ -33,10 +25,9 @@ export default function SettingsDialog(props) {
     }
 
     const changeStates = () => {
-        let levelVal = level.filter(x => x.active===true)[0].val
-        let sizeVal = size.filter(x => x.active===true)[0].val
-        props.changeStates({level:levelVal,size:sizeVal})
+        props.changeStates(level,size)
     }
+
 
     return (
         <div className="wrapper">

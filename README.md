@@ -19,3 +19,9 @@ npm start
 ```
 
 ***
+
+## How it looks?
+|Screen| Screenshots |
+|---|--|
+|Main Page|<img src='https://raw.githubusercontent.com/mhimanshu712/projShots/master/lightsOut/1.jpg' width='600px' >|
+|Settings|<img src='https://raw.githubusercontent.com/mhimanshu712/projShots/master/lightsOut/2.jpg' width='600px'>|

@@ -9,7 +9,7 @@ export default function SettingsDialog(props) {
     const changeLevel = (a) => {
         let cpy = level
         cpy = cpy.map((x,i) => (
-            i==a?{label:x.label,val:x.val,active:true} : {label:x.label,val:x.val,active:false}
+            i===a?{label:x.label,val:x.val,active:true} : {label:x.label,val:x.val,active:false}
         ))
 
         setLevel(cpy)
@@ -18,7 +18,7 @@ export default function SettingsDialog(props) {
     const changeSize = (a) => {
         let cpy = size
         cpy = cpy.map((x,i) => (
-            i==a?{label:x.label,val:x.val,active:true} : {label:x.label,val:x.val,active:false}
+            i===a?{label:x.label,val:x.val,active:true} : {label:x.label,val:x.val,active:false}
         ))
 
         setSize(cpy)
